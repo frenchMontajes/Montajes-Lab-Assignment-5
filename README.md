@@ -1,66 +1,75 @@
 You are required to present a department report that accesses csv files. You must put the data on the domain composition of the objects.
+## Class Diagram 
+![image](https://github.com/frenchMontajes/Montajes-Lab-Assignment-5/assets/130640700/c5e34cbb-c6bb-4772-a5f7-d81f4d911fda)
 
-Class Diagram
-img.png
+## Csv Files
+dep.csv contains the following
 
-Department CSV (deptCode, deptName, location)
-dep.csv
-IT, Information Tech, 2nd floor
-HR, Human Resource, 3rd floor
-FNC, Finance, 4th floor
-Department Employee CSV (deptCode, empNo, salary)
-deptemp.csv
-IT, E123, 30000
-IT, E124, 45000
-IT, E125, 51000
-HR, E251, 66000
-HR, E252, 25000
-FNC, E370, 42000
-FNC, E371, 29000
-FNC, E372, 37000
-Employee CSV (empNo, lastName, firstName, job)
-emp.csv
-E123, Maxwell, John, Developer
-E124, Delos Reyes, Ernesto, Analyst
-E125, Ortiz, Manuel, Tester
-E251, Natividad, Lisa, HR Manager
-E252, Rosanto, Margareth, HR Specialist
-E370, Baldo, Jason, Team Leader
-E371, Hernandez, Timothy, Junior Accountant
-E372, Cruz, Ricardo, CPA
-Sequence Diagram
-img.png
+deptCode, deptName, location <br>
+IT, Information Tech, 2nd floor <br>
+HR, Human Resource, 3rd floor <br>
+FNC, Finance, 4th floor <br>
 
-This will be the sample generated report:
+The deptemp.csv is referenced to get the salary  of the employees per department:
 
-Department code: IT
-Department name: Information Tech
-Department total salary: 126,000.00
----------------------Details -------------------------
-EmpNo		Employee Name	        Salary
-E123		Maxwell, John		30,000.00
-E125		Ortiz, Manuel		51,000.00
-E124		Delos Reyes, Ernesto	45,000.00
+deptCode, empNo, salary <br>
+IT, E123, 30000 <br>
+IT, E124, 45000 <br>
+IT, E125, 51000 <br>
+HR, E251, 66000 <br>
+HR, E252, 25000 <br>
+FNC, E370, 42000 <br>
+FNC, E371, 29000 <br> 
+FNC, E372, 37000 <br>
 
-Department code: HR
-Department name: Human Resource
-Department total salary: 91,000.00
----------------------Details -------------------------
-EmpNo		Employee Name	        Salary
-E252		Rosanto, Margareth	25,000.00
-E251		Natividad, Lisa		66,000.00
+To get the details of the employee you must access the emp.csv:
 
-Department code: FNC
-Department name: Finance
-Department total salary: 108,000.00
----------------------Details -------------------------
-EmpNo		Employee Name	      Salary
-E370		Baldo, Jason	      42,000.00
-E371		Hernandez, Timothy    29,000.00
-E372		Cruz, Ricardo	      37,000.00
-Instruction
-You are not allowed to alter the composition of the domain objects. Stick to the design. Disregard the data in the csv if it is not necessary to the object.
-Adhere to correct naming conventions in naming variables and objects.
-Use hashmap as your solution to the problem.
-Use the department.setDepTotalSalary() in putting the aggregated value into the object. Do not just use the salary accumulation approach in the printing process to get the depTotalSalary.
-Submit the Github solution link provided in NEUVLE.
+empNo, lastName, firstName, job <br>
+E123, Maxwell, John, Developer <br>
+E124, Delos Reyes, Ernesto, Analyst <br>
+E125, Ortiz, Manuel, Tester <br>
+E251, Natividad, Lisa, HR Manager <br>
+E252, Rosanto, Margareth, HR Specialist <br>
+E370, Baldo, Jason, Team Leader <br>
+E371, Hernandez, Timothy, Junior Accountant <br>
+E372, Cruz, Ricardo, CPA <br>
+
+You need to create objects that will handle the retrieval of the csv files to convert it into objects.  These are EmployeeDA and EmployeeDA objects.  This will be the execution of the sequence:
+
+![Screenshot 2024-04-11 213731](https://github.com/kevinmlisboa/OOP_Lab-Assignment-5/assets/133233113/7f9c2883-6a16-4d73-b44f-fcf4de3a5576)
+
+### This will be the sample generated report:
+Department code: IT <br> 
+Department name: Information Tech <br> 
+Department total salary: 126,000.00 <br> 
+---------------------Details ------------------------- <br>
+EmpNo		 Employee Name	Salary <br> 
+E123		Maxwell, John			30,000.00 <br>
+E125		Ortiz, Manuel			51,000.00 <br>
+E124		Delos Reyes, Ernesto		45,000.00 <br> 
+
+Department code: HR <br>
+Department name: Human Resource <br> 
+Department total salary: 91,000.00 <br> 
+---------------------Details ------------------------- <br>
+EmpNo		 Employee Name	Salary <br> 
+E252		Rosanto, Margareth		25,000.00 <br>
+E251		Natividad, Lisa		66,000.00 <br>
+
+Department code: FNC <br>
+Department name: Finance <br>
+Department total salary: 108,000.00 <br>
+---------------------Details ------------------------- <br>
+EmpNo		 Employee Name	Salary <br>
+E370		Baldo, Jason			42,000.00 <br> 
+E371		Hernandez, Timothy		29,000.00 <br>
+E372		Cruz, Ricardo			37,000.00 <br>
+
+## Instructions
+
+- Do not alter the composition of the domain objects.
+- Adhere to correct naming conventions for variables and objects.
+- Utilize HashMap as the solution to the problem.
+- Use the `department.setDepTotalSalary()` method to aggregate total salaries into the object.
+- Stick to the provided design and disregard any unnecessary data in the CSV files.
+
