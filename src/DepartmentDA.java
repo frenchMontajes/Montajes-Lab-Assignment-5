@@ -11,7 +11,7 @@ public class DepartmentDA {
 
     public DepartmentDA() throws FileNotFoundException {
         this.employeeDA = new EmployeeDA();
-        try (Scanner departmentFile = new Scanner(new FileReader("C:\\Users\\frenc\\IdeaProjects\\ShoolActivities\\LabAssignment5\\src\\dep.csv"))) {
+        try (Scanner departmentFile = new Scanner(new FileReader("src/dep.csv"))) {
             deptMap = new HashMap<>();
             while (departmentFile.hasNextLine()) {
                 String line = departmentFile.nextLine();
@@ -29,7 +29,7 @@ public class DepartmentDA {
     }
 
     private void readDeptEmp(Department department) throws FileNotFoundException {
-        try (Scanner deptEmpFile = new Scanner(new FileReader("C:\\Users\\frenc\\IdeaProjects\\ShoolActivities\\LabAssignment5\\src\\deptemp.csv"))) {
+        try (Scanner deptEmpFile = new Scanner(new FileReader("src/deptemp.csv"))) {
             while (deptEmpFile.hasNextLine()) {
                 String line = deptEmpFile.nextLine();
                 String[] deptEmpInfo = line.split(",");
@@ -48,14 +48,14 @@ public class DepartmentDA {
 
     public void print(Department department) {
         DecimalFormat df = new DecimalFormat("#,###.00");
-        System.out.println("Department Code: " + department.getDepCode());
-        System.out.println("Department Name: " + department.getDepName());
-        System.out.println("Department total Salary: " + df.format(department.getDepTotalSalary()));
-        System.out.println("------------Details----------------");
-        System.out.printf("%-10s %-20s %10s\n", "EmpNo", "EmployeeName", "Salary");
-        for (Map.Entry<String, Employee> entryMap : department.getEmployees().entrySet()) {
-            Employee employee = entryMap.getValue();
-            System.out.printf("%-10s %-20s %10s\n", entryMap.getKey(),
+        System.out.println("Department code: " + department.getDepCode());
+        System.out.println("Department name: " + department.getDepName());
+        System.out.println("Department total salary: " + df.format(department.getDepTotalSalary()));
+        System.out.println("---------------------Details -------------------------");
+        System.out.printf("%-10s\t %-20s\t %s\n", "EmpNo", "Employee Name", "Salary");
+        for (Map.Entry<String, Employee> employeeEntry : department.getEmployees().entrySet()) {
+            Employee employee = employeeEntry.getValue();
+            System.out.printf("%-10s\t %-20s\t %s\n", employee.getEmpNo(),
                     employee.getLastName() + ", " + employee.getFirstName(), df.format(employee.getSalary()));
         }
         System.out.println();

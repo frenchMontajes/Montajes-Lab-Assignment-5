@@ -2,20 +2,20 @@ public class Employee {
     private String empNo;
     private String lastName;
     private String firstName;
-
-    private Double Salary;
+    private Double salary;
 
     public Employee(String empNo, String lastName, String firstName) {
         this.empNo = empNo;
         this.lastName = lastName;
         this.firstName = firstName;
     }
+
     public Double getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(Double salary) {
-        Salary = salary;
+        this.salary = salary;
     }
 
     public String getEmpNo() {
@@ -41,8 +41,4 @@ public class Employee {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-
-
-
 }

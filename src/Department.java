@@ -27,13 +27,14 @@ public class Department {
         this.depName = depName;
     }
 
-    public Double getDepTotalSalary() {
+    public double getDepTotalSalary() {
         return depTotalSalary;
     }
 
-    public void setDepTotalSalary(Double depTotalSalary) {
+    public void setDepTotalSalary(double depTotalSalary) {
         this.depTotalSalary = depTotalSalary;
     }
+
     public HashMap<String, Employee> getEmployees() {
         return employees;
     }
@@ -41,5 +42,4 @@ public class Department {
     public void setEmployees(HashMap<String, Employee> employees) {
         this.employees = employees;
     }
-
 }
